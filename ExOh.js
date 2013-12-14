@@ -21,11 +21,7 @@ function ExOh(str) {
 				ex = ex;
 		}
 	}
-	if (ex === oh){
-		return true;
-	} else{
-		return false;
-	}
+	return ex === oh; 
 }
    
 // keep this function call here 
