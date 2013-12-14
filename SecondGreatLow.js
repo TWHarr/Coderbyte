@@ -8,7 +8,9 @@ function SecondGreatLow(arr) {
     arr.sort(compareNumber);
     for (var i = 0; i < arr.length; i++) {
         for (var j = 0; j < arr.length; j++) {
-            if ((i != j) && (arr[i] === arr[j])){
+            if ((arr.length === 2) && (arr[i] === arr[j])){
+                return arr[0] + " " + arr[1]; 
+            } else if ((i != j) && (arr[i] === arr[j])){
                 index = arr[j];
                 arr.splice(j, 1);
             }
