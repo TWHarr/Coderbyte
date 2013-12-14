@@ -6,7 +6,15 @@ function compareNumber(a,b){
 
 function SecondGreatLow(arr) {
     arr.sort(compareNumber);
-    return arr[1] + " " + arr[arr.length -2]
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr.length; j++) {
+            if ((i != j) && (arr[i] === arr[j])){
+                index = arr[j];
+                arr.splice(j, 1);
+            }
+        };
+    };
+    return arr[1] + " " + arr[arr.length -2];
 }
    
 // keep this function call here 
