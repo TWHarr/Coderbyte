@@ -2,17 +2,19 @@
 
 function DivisionStringified(num1,num2) {
     var rounded = String(Math.round(num1 / num2));
+    var roundedArr = rounded.split("").reverse();
     if (rounded.length < 4){
         return String(rounded);
-    }
-    var roundedArr = rounded.split("");
-    for (var i = roundedArr.length - 1; i >= 0; i--) {
-        if (i % 3 === 0){
-            roundedArr.splice(i,0, ",");
+    } else {
+        for (var i = 0; i < roundedArr.length; i++){
+            if (i % 4 === 0){
+                roundedArr.splice(i,0,",");
+            }
         }
+        roundedArr.shift();
+        roundedArr = roundedArr.reverse().join("");
+        return String(roundedArr);
     }
-    rounded = roundedArr.join("");
-    return rounded;
 }
    
 // keep this function call here 
