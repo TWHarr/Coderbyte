@@ -4,23 +4,24 @@ letter in the string with the letter following it in the alphabet (ie. c becomes
 becomes a). Then capitalize every vowel in this new string (a, e, i, o, u) and f
 inally return this modified string.*/
 
-function LetterChanges(str){
-    alphabet = "abcdefghijklmnopqrstuvwxyz";
-    alteredStr = ""
-    for (i = 0; i < str.length; i++){
-        if (alphabet.indexOf(str.charAt(i))!= -1){
-            toChange = alphabet.indexOf(str.charAt(i));
-            changed = alphabet.charAt(toChange + 1);
-        } else{
-            changed = str.charAt(i);
+function LetterChanges(str) {
+    var alphabet = "abcdefghijklmnopqrstuvwxyza"; //set up string that represents the alphabet for changing, plus extra a to account for z
+    var vowels = /[aeiou]/; // regex for vowels
+    alteredStr = ""; //initialize as a blank string
+    for (i = 0; i < str.length; i++) { //loop through the parameter
+        if (alphabet.indexOf(str.charAt(i))!= -1) { //if str[i] is found in the alphabet 
+            toChange = alphabet.indexOf(str.charAt(i)); // hold that position in the alphabet
+            changed = alphabet.charAt(toChange + 1); // hold the character one position up.
+        } else {
+            changed = str.charAt(i); // if it's not in the alphabet, hold it unaltered
         }
-        if (changed === alphabet.charAt(0) || changed === alphabet.charAt(4) || changed === alphabet.charAt(8) || changed === alphabet.charAt(14) || changed === alphabet.charAt(20)){
-            alteredStr += changed.toUpperCase();
-        } else{
-            alteredStr += changed;
+        if (vowels.test(changed)) { //additionally, if the character matches a vowel
+            alteredStr += changed.toUpperCase(); // make it uppercase, and send it to the result
+        } else {
+            alteredStr += changed; // else, send it to the result unaltered
         } 
     }
-    return alteredStr
+    return alteredStr // return the result
 }
    
 // keep this function call here 
