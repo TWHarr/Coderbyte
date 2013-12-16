@@ -2,11 +2,7 @@
 the str parameter being passed and return the string in reversed order. */
 
 function FirstReverse(str) { 
-	reversed = ""
-	for (i = str.length-1; i >= 0; i--){
-		reversed += str[i]
-	}
-	return reversed; 
+	return str.split("").reverse().join(""); //split string into an array of individual characters, reverse the array, then join with no separator and return it
          
 }
    
