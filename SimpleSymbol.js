@@ -7,23 +7,15 @@ the string to the left would be false. The string will not be empty and will
 have at least one letter. */
 
 function SimpleSymbols(str) {
-	var newstr = false;
-	var topstr = "";
-	var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	for (i = 0; i < str.length; i ++){
-		if (alphabet.indexOf(str.charAt(i)) != -1){
-			if (str.charAt(i-1) === "+" && str.charAt(i+1) === "+"){
-				newstr = true;
-			} else {
-				topstr = false;
+	var alph = /[a-z]/; //regex to hold alphabet. 
+	for (i = 0; i < str.length; i ++){ //start a loop to go through the string 
+		if (alph.test(str[i])){ // if the regex test is true...
+			if (str.charAt(i-1) != "+" || str.charAt(i+1) != "+"){ // but one of the characters isn't +...
+				return false; // break the loop and return false.
 			}
 		}
 	}
-	if (topstr === false){
-		return topstr;
-	} else{
-		return newstr;
-	}
+	return true; // if the loop doesn't get broken by a false, return true.
 }
    
 // keep this function call here 
