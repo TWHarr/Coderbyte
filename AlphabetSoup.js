@@ -4,10 +4,7 @@ the letters in alphabetical order (ie. hello becomes ehllo). Assume
 numbers and punctuation symbols will not be included in the string. */
 
 function AlphabetSoup(str) {
-	var initArray = str.split("");
-	var alphArray = initArray.sort();
-	var alph = alphArray.join("");
-	return alph;
+	return str.split("").sort().join(""); 
 }
    
 // keep this function call here 
