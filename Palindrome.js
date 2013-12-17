@@ -6,9 +6,9 @@ it is backward) otherwise return the string false. For example:
 will not be part of the string. */
 
 function Palindrome(str) {
-	var str = str.replace(/\s/g,'');
-	var backward = str.replace(/\s/g,'').split('').reverse().join('');
-	return (backward === str);
+	var str = str.replace(/\s/g,''); //remove spaces from str
+	var backward = str.split('').reverse().join(''); // split the string, reverse it, and join it again
+	return (backward === str); //return the backward === string check result
 }
    
 // keep this function call here 
