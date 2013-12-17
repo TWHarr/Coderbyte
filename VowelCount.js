@@ -4,26 +4,11 @@ of vowels the string contains (ie. "All cows eat grass" would
 return 5). Do not count y as a vowel for this challenge.*/ 
 
 function VowelCount(str) {
-	var count = 0;
-	for (i = 0; i < str.length; i++){
-		switch (str.charAt(i)){
-			case "a":
-				count += 1;
-				break;
-			case "e":
-				count += 1;
-				break;
-			case "i":
-				count += 1;
-				break;
-			case "o":
-				count += 1;
-				break;
-			case "u":
-				count += 1;
-				break;
-			default:
-				count = count;
+	var count = 0; //initialize count at 0 
+	var re = /[aeiou]/ //regex to hold vowels
+	for (i = 0; i < str.length; i++) { //loop through given string
+		if (re.test(str.charAt(i))) { //if test passes
+			count += 1; //increment count by 1
 		}
 	}
 	return count;
