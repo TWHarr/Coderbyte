@@ -6,15 +6,9 @@ true because there is exactly three characters between a and b).
 Otherwise return the string false. */
 
 function ABCheck(str) {
-    var master = 'false'
-    for (i = 0; i < str.length; i++) {
-        if (str[i] === "a") {
-            if (str.charAt(i + 4) === "b") {
-                return true;
-            }
-        }
-    }
-    return master;
+	var re = /a...b/; //regex for a separated from b by any 3 characters
+	return re.test(str); //return result of regex test. 
+	}
 }
    
 // keep this function call here 
