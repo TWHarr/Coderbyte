@@ -4,13 +4,7 @@ of words the string contains (ie. "Never eat shredded wheat" would
 return 4). Words will be separated by single spaces. */
 
 function WordCount(str) {
-	var count = 1
-	for (i = 0; i < str.length; i++){
-		if (str.charAt(i) === " "){
-			count += 1;
-		}
-	}
-	return count;
+	return str.split(" ").length;
 }
    
 // keep this function call here 
