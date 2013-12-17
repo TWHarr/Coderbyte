@@ -7,21 +7,12 @@ is "xooxxxxooxo" then the output should return false because
 there are 6 x's and 5 o's. */
 
 function ExOh(str) {
-	var ex = 0;
-	var oh = 0;
-	for (i = 0; i < str.length; i++) {
-		switch (str.charAt(i)){
-			case "x":
-				ex += 1;
-				break;
-			case "o":
-				oh += 1;
-				break;
-			default: 
-				ex = ex;
-		}
+	var strArr = str.split("").sort().join("").split("ox"); // sort the string alphabetically, split it when the letter changes
+	if (strArr.length === 1) { // return false if there are only Xs or Os.
+		return false;
+	} else { // if there are both
+		return (strArr[0].length === strArr[1].length) //check if they are equal.
 	}
-	return ex === oh; 
 }
    
 // keep this function call here 
