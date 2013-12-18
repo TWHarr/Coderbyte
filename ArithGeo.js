@@ -11,12 +11,12 @@ may be entered as parameters, 0 will not be entered, and no array will
 contain all the same elements. */
 
 function ArithGeo(arr){
-	if ((arr[arr.length - 1] % arr[arr.length - 2]) === 0 && (arr[arr.length - 2] % arr[arr.length - 3]) === 0){
+	if ((arr[2] % arr[1] === 0) && (arr[arr.length - 1] % arr[arr.length - 2]) === 0) { // if the numbers are divisible, it's geometric
 		return "Geometric";
-	} else if ((arr[1] - arr[0]) === (arr[arr.length - 1] - arr[arr.length - 2])){
+	} else if ((arr[1] - arr[0]) === (arr[arr.length - 1] - arr[arr.length - 2])) { // if it's the same difference between numbers, it's arithmetic.
 		return "Arithmetic";
 	} else {
-		return -1;
+		return -1; // if neither, it's not one of those patterns. 
 	}
 }
    
