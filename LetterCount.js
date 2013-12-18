@@ -26,7 +26,7 @@ function LetterCountI(str) {
         word = wordx; // and the return value with wordx 
     }
   }
-  if (count > 0) { // if there are repeate letters, return the word.
+  if (count > 0) { // if there are repeated letters, return the word.
     return word;
   } else{ // if there are no repeats, return -1
     return "-1";
