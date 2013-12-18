@@ -8,21 +8,24 @@ contain positive integers, and will not contain
 more than one mode. */
 
 function MeanMode(arr) {
-    var mean = 0;
+    arr.sort(); //make sure the values are in order
+
+    var mean = 0; //initialize mean variable
     for (var i = 0; i < arr.length; i++) {
-        mean += arr[i];
+        mean += arr[i]; //sum up the array elements
     }
-    mean = (mean / arr.length);
-    var modeCount = 0;
-    var currentCount = 0;
-    var mode = 0;
-    for (var j = 0; j < arr.length; j++) {
+    mean = (mean / arr.length); //divid by number of elements to get the mean 
+    
+    var modeCount = 0; // number of ocurrences of the mode
+    var currentCount = 0; // number of occurrences of the element the loop will test
+    var mode = 0; // the mode
+    for (var j = 0; j < arr.length; j++) { 
         if (arr[j] === arr[j+1]) {
-            currentCount += 1;
-        } else {
-            if (currentCount > modeCount) {
-                modeCount = currentCount;
-                mode = arr[j];
+            currentCount += 1; // count number of subsequent j until it's different
+        } else { // once you get something different,
+            if (currentCount > modeCount) { // if it was more than the current mode
+                modeCount = currentCount; //make that the new count
+                mode = arr[j]; // and make element j the mode
             }
         }
     }
